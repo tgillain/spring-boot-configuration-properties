@@ -9,9 +9,9 @@ public class ConnectorProperties {
     @Value("${graceful-shutdown-period:60}")
     private long gracefulShutdownPeriod;
 
-    private final ConfigConfiguration configConfiguration;
+    private ConfigRepository configConfiguration;
 
-    public ConnectorProperties(ConfigConfiguration configConfiguration) {
+    public ConnectorProperties(ConfigRepository configConfiguration) {
         assert configConfiguration!=null : "Received null configuration";
         this.configConfiguration = configConfiguration;
     }
@@ -19,4 +19,5 @@ public class ConnectorProperties {
     public String getParam() {
         return configConfiguration.getParam();
     }
+
 }

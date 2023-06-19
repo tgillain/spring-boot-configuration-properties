@@ -1,12 +1,14 @@
 package org.example.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ConfigConfiguration {
     
-    public String getParam() {
-        return "fakeParamValue";
+    @Bean
+    ConfigRepository configRepository() {
+        return new ConfigRepository();
     }
     
 }
